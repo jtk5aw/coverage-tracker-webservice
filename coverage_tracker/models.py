@@ -29,4 +29,4 @@ class Staffer(models.Model):
     name = models.CharField(max_length=50, default='Test Store')
     building = models.ForeignKey(Dorm, on_delete=models.PROTECT)
     on_coverage = models.BooleanField()
-    phone_number = PhoneNumberField()
+    phone_number = PhoneNumberField(default='5714395221')
