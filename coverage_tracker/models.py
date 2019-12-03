@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
@@ -30,4 +31,6 @@ class Staffer(models.Model):
     name = models.CharField(max_length=50, default='Test Store')
     building = models.CharField(max_length=100, default='Fake Dorm') # Will be linked up with dorm strings from Firebase (hacky fix for now)
     on_coverage = models.BooleanField()
-    phone_number = PhoneNumberField(default='5714395221')
+    phone_number = PhoneNumberField(default='+5714395221')
+
+admin.site.register(Staffer)
